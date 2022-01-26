@@ -10,6 +10,7 @@
 <body>
     <div class="container">
         <center><h2>Listado de Libros</h2></center>    
+        <a class="btn btn-warning" href="index.php" role="button">Ir Inicio</a>
         <a class="btn btn-primary" href="nuevolibro.php" role="button">Nuevo Libro</a>
         <br><br>
         <table class="table table-striped table-bordered">

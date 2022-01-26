@@ -110,3 +110,21 @@ CREATE TABLE `usuario` (
   `clave` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`idUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- View structure for vi_libros
+-- ----------------------------
+DROP VIEW IF EXISTS `vi_libros`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`simplerisk`@`localhost` SQL SECURITY DEFINER  VIEW `vi_libros` AS SELECT
+libro.idLibro,
+libro.isbn,
+libro.titulo,
+libro.paginas,
+CONCAT(autor.nombres,autor.apellidos) AS autor,
+categoria.descripcion AS categoria,
+libro.idAutor,
+libro.idCategoria
+FROM
+libro
+INNER JOIN autor ON libro.idAutor = autor.idAutor
+INNER JOIN categoria ON libro.idCategoria = categoria.idCategoria ;
